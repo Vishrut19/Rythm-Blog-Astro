@@ -3,40 +3,111 @@ import { Image } from "astro:assets";
 ---
 
 <header
-  class="flex justify-between items-center px-24 py-12 max-w-7xl mx-auto w-full max-sm:px-5 max-sm:py-10"
+  class="navbar shadow-sm sticky top-0 z-50 backdrop-blur-md bg-white/95 border-b border-base-200"
 >
-  <a href="/" class="flex gap-x-4 items-center">
-    <Image
-      src="/heartbeat.png"
-      alt="Heartbeat icon"
-      width={60}
-      height={60}
-      format="webp"
-      class="rounded-2xl aspect-thumbnail object-cover"
-    />
-    <p class="uppercase text-3xl text-zinc-900 max-sm:text-2xl">blog</p>
-  </a>
-  <ul class="flex gap-x-8 max-sm:gap-x-4">
-    <li>
+  <div
+    class="max-w-7xl mx-auto w-full px-4 lg:px-8 flex items-center justify-between"
+  >
+    <!-- Logo and brand -->
+    <div class="navbar-start">
       <a
         href="/"
-        class="text-teal-900 font-bold hover:text-teal-700 transition-colors"
-        >Home</a
+        class="btn btn-ghost normal-case text-xl gap-3 hover:bg-transparent px-2 no-underline"
       >
-    </li>
-    <li>
-      <a
-        href="/about"
-        class="text-teal-900 font-bold hover:text-teal-700 transition-colors"
-        >About</a
-      >
-    </li>
-    <li>
-      <a
-        href="/blog"
-        class="text-teal-900 font-bold hover:text-teal-700 transition-colors"
-        >Blog</a
-      >
-    </li>
-  </ul>
+        <Image
+          src="/heartbeat.png"
+          alt="Heartbeat icon"
+          width={48}
+          height={48}
+          format="webp"
+          class="rounded-xl w-12 h-12 object-cover"
+        />
+        <span
+          class="uppercase text-2xl font-bold text-base-content hidden sm:inline-block"
+        >
+          Rythm Blog
+        </span>
+      </a>
+    </div>
+
+    <!-- Desktop navigation -->
+    <div class="navbar-center hidden lg:flex">
+      <ul class="menu menu-horizontal px-1 gap-1">
+        <li>
+          <a
+            href="/"
+            class="text-base font-semibold hover:bg-primary/10 hover:text-primary transition-all duration-200 rounded-lg px-4 py-2 no-underline"
+          >
+            Home
+          </a>
+        </li>
+        <li>
+          <a
+            href="/about"
+            class="text-base font-semibold hover:bg-primary/10 hover:text-primary transition-all duration-200 rounded-lg px-4 py-2 no-underline"
+          >
+            About
+          </a>
+        </li>
+        <li>
+          <a
+            href="/blog"
+            class="text-base font-semibold hover:bg-primary/10 hover:text-primary transition-all duration-200 rounded-lg px-4 py-2 no-underline"
+          >
+            Blog
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Mobile menu dropdown -->
+    <div class="navbar-end lg:hidden">
+      <div class="dropdown dropdown-end">
+        <label tabindex="0" class="btn btn-ghost">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </label>
+        <ul
+          tabindex="0"
+          class="menu menu-sm dropdown-content mt-3 z-10 p-2 shadow-lg bg-base-100 rounded-box w-52 border border-base-200"
+        >
+          <li>
+            <a
+              href="/"
+              class="text-base font-semibold hover:text-primary no-underline"
+            >
+              Home
+            </a>
+          </li>
+          <li>
+            <a
+              href="/about"
+              class="text-base font-semibold hover:text-primary no-underline"
+            >
+              About
+            </a>
+          </li>
+          <li>
+            <a
+              href="/blog"
+              class="text-base font-semibold hover:text-primary no-underline"
+            >
+              Blog
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </header>

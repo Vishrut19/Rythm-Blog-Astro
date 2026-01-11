@@ -16,20 +16,72 @@ const {
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
     <meta name="og:image" content={image} />
+    <meta name="og:title" content={title} />
+    <meta name="og:description" content={description} />
     <ClientRouter />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body class="min-h-screen bg-white overflow-x-hidden">
+  <body class="min-h-screen bg-base-100 text-base-content overflow-x-hidden">
     <Header />
     <slot />
+    <footer class="bg-base-200 border-t border-base-300 mt-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div>
+            <h3 class="text-lg font-bold mb-4">Rythm Nation</h3>
+            <p class="text-base-content/70">
+              A community of music producers and enthusiasts sharing knowledge and inspiration.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold mb-4">Quick Links</h3>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="/"
+                  class="text-base-content/70 hover:text-primary transition-colors no-underline"
+                >
+                  Home
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/blog"
+                  class="text-base-content/70 hover:text-primary transition-colors no-underline"
+                >
+                  Blog
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/about"
+                  class="text-base-content/70 hover:text-primary transition-colors no-underline"
+                >
+                  About
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold mb-4">Connect</h3>
+            <p class="text-base-content/70">
+              Follow us for the latest updates and music production tips.
+            </p>
+          </div>
+        </div>
+        <div class="mt-8 pt-8 border-t border-base-300 text-center text-base-content/60">
+          <p>&copy; {new Date().getFullYear()} Rythm Nation. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
 

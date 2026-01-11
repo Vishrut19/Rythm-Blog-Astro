@@ -3,6 +3,7 @@ import { getCollection } from "astro:content";
 import Layout from "../layouts/Layout.astro";
 import Main from "../components/Main.astro";
 import PostList from "../components/PostList.astro";
+import Hero from "../components/Hero.astro";
 
 export const prerender = true;
 
@@ -19,70 +20,42 @@ const sortedPosts = posts
 
 <Layout title="Rythm Nation Blog">
   <!-- Hero Section -->
-  <section class="bg-gradient-to-br from-primary/10 via-base-100 to-secondary/10 py-16 lg:py-24">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-3xl mx-auto">
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-base-content mb-6 leading-tight">
-          Welcome to Rythm Nation
-        </h1>
-        <p class="text-xl sm:text-2xl text-base-content/70 mb-8 leading-relaxed">
-          Your ultimate destination for music production insights, studio tips, and creative inspiration.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="/blog" class="btn btn-primary btn-lg no-underline">
-            Explore Blog
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-5 w-5 ml-2"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M13 7l5 5m0 0l-5 5m5-5H6"
-              />
-            </svg>
-          </a>
-          <a href="/about" class="btn btn-outline btn-lg no-underline">
-            Learn More
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
+  <Hero />
 
   <!-- Featured Posts Section -->
   <Main>
-    <div class="mb-12">
-      <h2 class="text-3xl sm:text-4xl font-bold text-base-content mb-4">
-        Latest Articles
-      </h2>
-      <p class="text-lg text-base-content/70 max-w-2xl">
-        Stay updated with our newest content on music production, gear reviews, and industry insights.
-      </p>
-    </div>
-    <PostList posts={sortedPosts} />
-    <div class="text-center mt-12">
-      <a href="/blog" class="btn btn-primary btn-lg no-underline">
-        View All Posts
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-5 w-5 ml-2"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
+    <div class="py-16 md:py-24">
+      <div
+        class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4"
+      >
+        <div>
+          <h2 class="text-4xl font-bold text-base-content mb-4 tracking-tight">
+            Latest Articles
+          </h2>
+          <p class="text-lg text-base-content/70 max-w-2xl">
+            Stay updated with our newest content on music production, gear
+            reviews, and industry insights.
+          </p>
+        </div>
+        <a href="/blog" class="btn btn-ghost group no-underline">
+          View All
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            stroke-width="2"
-            d="M13 7l5 5m0 0l-5 5m5-5H6"
-          />
-        </svg>
-      </a>
+            class="lucide lucide-arrow-right group-hover:translate-x-1 transition-transform"
+            ><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg
+          >
+        </a>
+      </div>
+
+      <PostList posts={sortedPosts} />
     </div>
   </Main>
 </Layout>

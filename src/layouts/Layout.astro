@@ -16,7 +16,7 @@ const {
 ---
 
 <!doctype html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="winter">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
@@ -26,19 +26,33 @@ const {
     <ClientRouter />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body class="min-h-screen bg-base-100 text-base-content overflow-x-hidden">
+  <body
+    class="min-h-screen bg-base-100 text-base-content overflow-x-hidden font-['Outfit'] selection:bg-primary selection:text-primary-content"
+  >
     <Header />
     <slot />
     <footer class="bg-base-200 border-t border-base-300 mt-20">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div>
-            <h3 class="text-lg font-bold mb-4">Rythm Nation</h3>
-            <p class="text-base-content/70">
-              A community of music producers and enthusiasts sharing knowledge and inspiration.
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div class="col-span-1 md:col-span-2">
+            <h3
+              class="text-2xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary inline-block"
+            >
+              Rythm Nation
+            </h3>
+            <p class="text-base-content/70 max-w-sm">
+              Empowering music producers, artists, and sound engineers with
+              top-notch resources, tutorials, and community support. Join the
+              rhythm.
             </p>
           </div>
           <div>
@@ -47,7 +61,7 @@ const {
               <li>
                 <a
                   href="/"
-                  class="text-base-content/70 hover:text-primary transition-colors no-underline"
+                  class="link link-hover text-base-content/70 hover:text-primary transition-colors"
                 >
                   Home
                 </a>
@@ -55,7 +69,7 @@ const {
               <li>
                 <a
                   href="/blog"
-                  class="text-base-content/70 hover:text-primary transition-colors no-underline"
+                  class="link link-hover text-base-content/70 hover:text-primary transition-colors"
                 >
                   Blog
                 </a>
@@ -63,7 +77,7 @@ const {
               <li>
                 <a
                   href="/about"
-                  class="text-base-content/70 hover:text-primary transition-colors no-underline"
+                  class="link link-hover text-base-content/70 hover:text-primary transition-colors"
                 >
                   About
                 </a>
@@ -72,13 +86,64 @@ const {
           </div>
           <div>
             <h3 class="text-lg font-bold mb-4">Connect</h3>
-            <p class="text-base-content/70">
-              Follow us for the latest updates and music production tips.
-            </p>
+            <p class="text-base-content/70 mb-4">stay in the loop!</p>
+            <div class="flex gap-4">
+              <!-- Social Icons placeholders -->
+              <a
+                href="#"
+                class="btn btn-circle btn-sm btn-ghost hover:bg-base-300"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-twitter"
+                  ><path
+                    d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"
+                  ></path></svg
+                >
+              </a>
+              <a
+                href="#"
+                class="btn btn-circle btn-sm btn-ghost hover:bg-base-300"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-instagram"
+                  ><rect width="20" height="20" x="2" y="2" rx="5" ry="5"
+                  ></rect><path
+                    d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
+                  ></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"
+                  ></line></svg
+                >
+              </a>
+            </div>
           </div>
         </div>
-        <div class="mt-8 pt-8 border-t border-base-300 text-center text-base-content/60">
-          <p>&copy; {new Date().getFullYear()} Rythm Nation. All rights reserved.</p>
+        <div
+          class="mt-8 pt-8 border-t border-base-300 flex flex-col md:flex-row justify-between items-center text-sm text-base-content/60"
+        >
+          <p>
+            &copy; {new Date().getFullYear()} Rythm Nation. All rights reserved.
+          </p>
+          <div class="flex gap-4 mt-4 md:mt-0">
+            <a href="#" class="link link-hover">Privacy Policy</a>
+            <a href="#" class="link link-hover">Terms of Service</a>
+          </div>
         </div>
       </div>
     </footer>

@@ -22,13 +22,17 @@ const { Content } = await post.render();
 <Layout title={post.data.title}>
   <Main>
     <H1 text={post.data.title} />
-    <Image
-      src={post.data.image}
-      alt={post.data.title}
-      width={1024}
-      height={1024 / 1.5}
-      class="rounded-2xl shadow-xl mb-4 aspect-thumbnail object-cover"
-    />
+    {
+      post.data.image && (
+        <Image
+          src={post.data.image}
+          alt={post.data.title}
+          width={1024}
+          height={683}
+          class="rounded-2xl shadow-xl mb-4 w-full object-cover"
+        />
+      )
+    }
     <div class="prose prose-2xl overflow-visible relative mb-20">
       <Content />
     </div>

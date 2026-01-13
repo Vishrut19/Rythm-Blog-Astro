@@ -4,7 +4,8 @@ import Layout from "../layouts/Layout.astro";
 import Main from "../components/Main.astro";
 import PostList from "../components/PostList.astro";
 import Hero from "../components/Hero.astro";
-
+import ArrowRight from "phosphor-astro/ArrowRight.astro";
+// import RocketLaunch from "phosphor-astro/RocketLaunch.astro";
 export const prerender = true;
 
 const posts = await getCollection("posts");
@@ -36,22 +37,13 @@ const sortedPosts = posts
             Stay updated with our newest content on music production, gear
             reviews, and industry insights.
           </p>
+          <!-- <RocketLaunch /> -->
         </div>
         <a href="/blog" class="btn btn-ghost group no-underline">
           View All
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-arrow-right group-hover:translate-x-1 transition-transform"
-            ><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg
-          >
+          <ArrowRight
+            class="h-5 w-5 group-hover:translate-x-1 transition-transform"
+          />
         </a>
       </div>
 

@@ -1,5 +1,7 @@
 ---
 import { Image } from "astro:assets";
+import Palette from "phosphor-astro/Palette.astro";
+import List from "phosphor-astro/List.astro";
 ---
 
 <header
@@ -67,27 +69,7 @@ import { Image } from "astro:assets";
       <!-- Theme Toggle -->
       <div class="dropdown dropdown-end">
         <div tabindex="0" role="button" class="btn btn-ghost btn-circle btn-sm">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-palette"
-            ><circle cx="13.5" cy="6.5" r=".5"></circle><circle
-              cx="17.5"
-              cy="10.5"
-              r=".5"></circle><circle cx="8.5" cy="7.5" r=".5"></circle><circle
-              cx="6.5"
-              cy="12.5"
-              r=".5"></circle><path
-              d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.093 0-.84.657-1.5 1.5-1.5l.687-.001c3.08 0 6.16-2.5 6.16-5.5C21.915 5.914 17.653 2 12 2Z"
-            ></path></svg
-          >
+          <Palette class="w-5 h-5" />
         </div>
         <ul
           tabindex="0"
@@ -161,19 +143,7 @@ import { Image } from "astro:assets";
 
       <div class="dropdown dropdown-end lg:hidden">
         <label tabindex="0" class="btn btn-ghost btn-circle">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-6 w-6"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16"></path>
-          </svg>
+          <List class="h-6 w-6" />
         </label>
         <ul
           tabindex="0"

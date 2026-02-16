@@ -5,8 +5,10 @@ const postCollection = defineCollection({
     z.object({
       author: z.string(),
       date: z.string(),
-      image: image(),
+      image: image().optional(),
       title: z.string(),
+      categories: z.array(z.string()).optional(),
+      featured: z.boolean().optional(),
     }),
 });
 
